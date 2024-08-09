@@ -7,11 +7,11 @@ console.log(n, k);
 let values = input[1].trim().split(' ').map(Number);
 console.log(values);
 
-for (let i = 0; i < values.length; i++) { //기준이 되는 배열
-  for (let j = 0; j < values.length; j++) {
-    if (values[j] > values[j] - n) {
-      values[j], values[j + 1] = values[j + 1], values[j];
+for (let i = 0; i < k; i++) { //기준이 되는 배열
+  for (let j = 0; j < n - 1; j++) { //for (let j = 0; j < values.length; j++) {
+    if (values[j] > values[j + 1]) {  //if (values[j] < values[n - 1]) {
+      [values[j], values[j + 1]] = [values[j + 1], values[j]];
     }
   }
-  console.log(values);
 }
+console.log(values.slice().join(' '));  // 상위 k개의 값을 출력
