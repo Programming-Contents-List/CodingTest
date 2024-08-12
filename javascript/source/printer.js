@@ -2,6 +2,7 @@ let path = require('path');
 let inputPath = path.join(__dirname, '/dev/stdin'); // __dirname은 현재 스크립트의 디렉토리 절대경로
 let input = require('fs').readFileSync(inputPath).toString().split('\n');
 //let input = require('fs').readFileSync('/dev/stdin').toString().split('\n');  //백준 제출
+
 let [N, M] = input[0].trim().split(' ').map(Number);
 //왜 map을 slice를 사용해서 변수값을 정의하는 방법과 new Array를 사용해서 크기를 지정하는 방식의 차이가 무엇인지 설명
 // let A = input.slice(1, 4).map(row => row.trim().split(' ').map(Number));
