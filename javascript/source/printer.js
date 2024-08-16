@@ -3,5 +3,14 @@ let inputPath = path.join(__dirname, '/dev/stdin'); // __dirname은 현재 스�
 let input = require('fs').readFileSync(inputPath).toString().trim().split('\n');
 //let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');  //백준 제출
 input.shift();
-let arr = input.sort((a, b) => a.length - b.length);
-arr.forEach(element => console.log(element));
+let arr = [...new Set(input)];
+//sort의 조건을 다는 방법을 더욱 명확히 잡아 볼 것.
+let result = arr.sort((a, b) => {
+  if (a.length === b.length) {
+    return a.localeCompare(b);
+  } else {
+    return a.length - b.length;
+  }
+});
+
+result.forEach(element => console.log(element));
