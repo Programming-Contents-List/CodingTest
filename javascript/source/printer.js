@@ -3,19 +3,17 @@ let inputPath = path.join(__dirname, '/dev/stdin'); // __dirname은 현재 스�
 let input = require('fs').readFileSync(inputPath).toString().trim().split('\n');
 //let input = require('fs').readFileSync('/dev/stdin').toString().split('\n');  //백준 제출
 // input.forEach(el => console.log(el))
-let [a, b, c, d, e] = input;
 let result = "";
-console.log(a[0]);
+console.log(input[0][2]);
 for (let i = 0; i < input.length; i++) {
-  console.log(input[i])
-  for (let j = 0; j < input[i].length; j++) {
-    console.log(input[i][j]);
-    if (j === 0) {
-      result += input[i][j];
-    } else if (j === 1 && result.length >= 5) {
-      result += input[i][j];
-    }
+  for (let j = 0; j < input.length; j++) {
+    result += input[j][i];
+
+    //왜 [j][i]일 경우와 [i][j]일 경우의 결과 값이 다른가?
+    //이유는 j가 0번쩨 일때 [i++][0]
+    //하지만 2번째 입력인 경우는 불일치
+    // if (i < input.length) {
+    // }
   }
 }
-
 console.log(result);
