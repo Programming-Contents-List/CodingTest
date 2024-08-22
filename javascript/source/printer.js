@@ -5,12 +5,12 @@ let input = require('fs').readFileSync(inputPath).toString().trim().split('\r\n'
 let length = input[0];
 input.shift();
 
-let arr = input.map(el => el.split(' '));
+let arr = input.map(el => el.split(' ')); //.map(Number)
 arr.sort((a, b) => {
-  if (a[1] === b[1]) {
-    return a[0] - b[0];  // y좌표가 같을 때 x좌표 오름차순
+  if (a[0] === b[0]) {
+    return a[1] - b[1];  // y좌표가 같을 때 x좌표 오름차순
   } else {
-    return a[1] - b[1];  // y좌표 오름차순
+    return a[0] - b[0];  // y좌표 오름차순
   }
 });
 
