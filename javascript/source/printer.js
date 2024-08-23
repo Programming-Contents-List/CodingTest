@@ -8,5 +8,6 @@ let temp = input.map(el => el.split(' '));
 let arr = temp[1];
 let v = temp[2];
 // console.log(v);
-let result = arr.filter(el => el == v).length;
+let result = arr.filter(el => el.includes(v)).length;
+
 console.log(result);
