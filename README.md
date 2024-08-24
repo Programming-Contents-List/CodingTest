@@ -71,3 +71,6 @@
   ```
 
   </details>
+
+## Big O fucntion Graph
+![image](https://github.com/user-attachments/assets/42754ed9-4029-49ee-bcea-673aa915efd0)
