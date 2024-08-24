@@ -8,14 +8,14 @@ let price = input[0];
 let charge = paid - price;
 console.log(charge);
 
+let count = 0; // 동전 개수 카운트
+
 for (let i = 0; i < N.length; i++) {
-  if (charge > N[i]) {
+  while (charge >= N[i]) {
     charge -= N[i];
+    count++;
     console.log('used -', N[i]);
     console.log('current', charge);
   }
-  if (charge === 0) {
-    break;
-  }
 }
-console.log('done');
+console.log('done', count);
