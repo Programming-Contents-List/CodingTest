@@ -10,10 +10,9 @@ let arr = temp[1]
 arr.sort((a, b) => a - b);
 console.log(arr);
 let result = 0;
-
+let temSum = 0;
 arr.forEach(el => {
-  let temp = el;
-  temp += el;
-  result += temp;
+  temSum += el;
+  result += temSum;
 });
 console.log(result);
