@@ -12,13 +12,17 @@ let arr = temp;
 // let min = Math.max(...arr.flat()); //flat은 모든 배열을 평탄화 시킨다.
 
 arr.sort((a, b) => {
+  if (b[0] < a[0] < b[1]) {
+    console.log(a[0], b[1], b[0]); //3,4,1
+    return b[1] - a[0]  //내림차순?
+  }
   // if (a[0] === b[0]) {
   //   console.log('===', a[0], b[0]);
   // } else {
   //   console.log('!===', a[0], b[0]);
   // }
   // console.log(a[0], b[1]);
-  return a[0] - b[0]; //정렬 조건문에서는 return을 항시 넣어야함
+  // return a[0] - b[0]; //정렬 조건문에서는 return을 항시 넣어야함
 });
 
 // arr.sort((a, b) => {
@@ -31,4 +35,4 @@ arr.sort((a, b) => {
 //   }
 // });
 
-// console.log(arr);
+console.log(arr);
