@@ -11,10 +11,26 @@ let arr = temp;
 // console.log(arr);
 
 arr.sort((a, b) => {
-  if (a[0] === b[1]) {
-    return a[0] - b[1];
-  } else {
-    return a[1] - b[0];
-  }
+  console.log('a, b', a, b);
+
+  /**
+   * a, b [ 3, 5 ] [ 1, 4 ]
+  a, b [ 0, 6 ] [ 3, 5 ]
+  a, b [ 5, 7 ] [ 0, 6 ]
+  a, b [ 3, 8 ] [ 5, 7 ]
+  a, b [ 5, 9 ] [ 3, 8 ]
+  a, b [ 6, 10 ] [ 5, 9 ]
+  a, b [ 8, 11 ] [ 6, 10 ]
+  a, b [ 8, 12 ] [ 8, 11 ]
+  a, b [ 2, 13 ] [ 8, 12 ]
+  a, b [ 12, 14 ] [ 2, 13 ]
+   * 
+   */
+
+  // if (a[0] === b[1]) {
+  //   return a[0] - b[1];
+  // } else {
+  //   return a[1] - b[0];
+  // }
 });
-console.log(arr);
+// console.log(arr);
