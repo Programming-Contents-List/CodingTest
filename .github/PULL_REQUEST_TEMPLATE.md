@@ -1,6 +1,7 @@
 ## #️⃣ Number
 
 - problem Number
+- T/No.N
 
 ## 🏆정답여부
 
@@ -11,7 +12,7 @@
 🔗 [문제번호](https://# "baekjoon 문제번호")
 
 ## 🔐풀이 과정
- > ### 🔥Point
+ > 🔥Point
     문제를 접근한 방식을 적어주세요.
 - 풀이과정을 적어 주세요.
 
