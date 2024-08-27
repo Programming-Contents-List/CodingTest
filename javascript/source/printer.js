@@ -13,7 +13,7 @@ let result = 0;
 //N > (max && min)의 의미는?
 //N % max && N % min !== 0와 N % max !== 0 && N % min !== 0 은 다르다
 //!== 0 은 0이 아닐 경우 true인것이다. 즉, 0이면 false가 되어서 while문에서 벗어난다.
-
+//조건문을 정할 때 기준이 무엇인지 명확하게 확인과 기준이 필요
 if (N > max && N > min) {
   while (N % max !== 0 || N % min !== 0) {
     if (N % max === 0 && N >= 0) {
