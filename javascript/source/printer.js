@@ -12,7 +12,7 @@ if (N > max && N > min) {
       N -= max;
       console.log(N);
       result++;
-    } else if (N % min === 0 && N >= 0) {
+    } else if (N % min >= 0 && N >= 0) {
       N -= min;
       result++;
     }
