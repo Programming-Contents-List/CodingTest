@@ -6,19 +6,18 @@ let N = parseInt(input[0]);
 let max = 5;
 let min = 3;
 let result = 0;
-if (N > max && N > min) {
-  while (N > 0) {
-    if (N % max === 0 && N >= 0) {
-      N -= max;
-      console.log(N);
-      result++;
-    } else if (N % min >= 0 && N >= 0) {
-      N -= min;
-      result++;
-    }
+
+while (N > 0) {
+  if (N % max === 0 && N >= max) {
+    N -= max;
+    result++;
+  } else if (N % min >= 0 && N >= min) {
+    N -= min;
+    result++;
+  } else {
+    result = -1;
+    break;
   }
-} else {
-  result = -1;
 }
-console.log(N);
+// console.log(N);
 console.log(result);
