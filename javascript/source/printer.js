@@ -6,8 +6,19 @@ let value = input[0];
 console.log(value)
 let a = 3;
 let b = 5;
+let result = 0;
+// %, / 이 둘을 다시 짚고 넘어가자.
+// console.log(value % b);
 
 while (value !== 0) {
-  value /= 5;
-  console.log(value);
+  value %= b;
+  result++;
+  if (value % b !== 0) {
+    // console.log('value', value);
+    // break;
+    value %= a;
+    result++;
+  }
 }
+
+console.log(result);
