@@ -23,6 +23,8 @@ while (N > 0) {
     result = -1;
     break;
   }
+} else {
+  result = -1;
 }
 
 console.log(result);
