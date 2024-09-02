@@ -29,5 +29,8 @@ while (N > 0) {
     console.log(result);
     return -1;
   }
+} else {
+  result = -1;
 }
+
 console.log(result);
