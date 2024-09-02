@@ -10,12 +10,15 @@ let arrA = arr.slice(0, 3);
 let arrB = arr.slice(3);
 // console.log(arr);
 // arr.map(el => console.log(el));
-let result = [[], [], []];
+let result = [];
 arrA.map((el, i) => {
+  let row = [];
   el.map((el, j) => {
-    result[i][j] = parseInt(el) + parseInt(arrB[i][j]);
+    row.push(parseInt(el) + parseInt(arrB[i][j]));
     // console.log(parseInt(el) + parseInt(arrB[i][j]))
   });
+  result.push(row);
 });
-
+// console.log(result);
 result.forEach(el => console.log(el.join(' ')));
+// result.forEach(el => console.log(el.join(' ')));
