@@ -13,13 +13,12 @@ arr.map((el) => {
   if (el.length > 1 && el[0] === 'push') {
     temp.push(el[1]);
   } else if (el[0] === 'pop' && idx !== 0) {
-    temp.pop();
+    console.log(temp.pop());
   } else if (el[0] === 'pop' && idx === 0) {
     console.log(-1)
   } else if (el[0] === 'size') {
     console.log(temp.length);
   } else if (el[0] === 'top' && idx !== 0) {
-    idx
     console.log(temp[idx - 1]);
   } else if (el[0] === 'top' && idx === 0) {
     console.log(-1);
