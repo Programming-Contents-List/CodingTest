@@ -1,43 +1,43 @@
-# 🧠DynamicProgramming (A.K.A DP)
+# 🧠DFS
 
-> DynamicProgramming, DP, 동적 계획법
+> 깊이 우선 탐색, depth-first-search
 
+- ### ⏱시간복잡도 : O(V+E)
 - ### 🧩개념
-  - 간단한 문제로 분리하여 부분의 문제들을 해결함으로써 최종적으로 복잡한 문제의 답을 구하는 방법을 뜻한다.
+  - DFS는 그래프 완전 탐색 기법 중 하나이다. 따라 그래프의 모든 노드를 탐색한다고 보면 된다.
 - ### 👀특징
-  - 자주 나오는 알고리즘 문제이며 범위가 워낙 넓다.
+  - [재귀 함수](https://www.acmicpc.net/problemset?sort=ac_desc&algo=62 "baekjoon 재귀함수") 로 구현
+  - [스택](https://www.acmicpc.net/problemset?sort=ac_desc&algo=71 "baekjoon 스택") 자료구조 이용
+    > FILO(선입선출): 먼저 들어온 DATA 간중에 나간다.
+  - 스택 오버플로에 유의 해야한다.
 
 ---
 
 # 📌핵심 이론
 
-- 큰 문제를 작은 문제로 나눠야한다.
-  - 점화식(재귀식)으로 풀어낼 수 있다.
-- 작은 문제들이 반복돼 나타나고 사용되며 작은 문네들의 결괏값은 항상 같아야 한다. [[링크](https://ko.wikipedia.org/wiki/%EC%A0%90%ED%99%94%EC%8B%9D "점화식 wiki")]
-- 작은 문제들은 한 번만 계산(함수)해서 return해야 한다. DP테이블을 이용한다. 이를 **메모이제이션** 기법 이라고 한다.
-  - 시간복잡도 측면에서 유리하다.
-  - **메모이제이션**은 **백트래킹** 알고리즘과 유사하다.
-- DP는 **톱-다운** 방식과 **바텀-업** 방식으로 구현 할 수 있다.
+- 한번 방문한 노드를 다시 방문하면 안된다.
+  > 노드 방문 여부 체크할 배열이 필요.(**방문 배열**)
+- 그래프는 [인접 리스트](https://www.inflearn.com/course/lecture?courseSlug=%EB%91%90%EC%9E%87-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%8C%8C%EC%9D%B4%EC%8D%AC&unitId=148393&tab=curriculum "그래프 inflearn")로 표현.
+- DFS는 LIFO(후입선출) 특성을 가지고 있다.
+  > DFS구현은 스택보다 스택 성질을 갖는 [재귀 함수](https://www.acmicpc.net/problemset?sort=ac_desc&algo=62 "baekjoon 재귀함수")로 많이 구현
 
 ---
 
 # 📝문제예시
 
-> - 대표적인 DP가 적용되는 사례 : 피보나치 수열 공식
-> - 공식: D[N] = D[N - 1] + D[N - 2]
-> - baekjoon: [2747](https://www.acmicpc.net/problem/2747 "2747 baekjoon")
+> - 그래프 완전 탐색: 단절점 찾기, 단절선 찾기, 사이클 찾기, 위상 정렬
+> - 재귀함수 방법, 스택 방법
 
-- 문제: 피보나치 수열로 `[1,x,2,y,5,z]` 이루어진 배열 x,y,z를 구하시오. [[링크]("풀이방식")]
+- Descriptions [[링크]("풀이방식")]
 
 # ✍풀이방식
 
-1. DP로 풀수 있는지 확인하기
-2. 점화식 세우기
-   > 논리적으로 문제를 나누고, 문제간의 **인과 관계**를 파악하는 훈련이 필요하다. [[section9 조합](https://www.inflearn.com/course/lecture?courseSlug=%EB%91%90%EC%9E%87-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%8C%8C%EC%9D%B4%EC%8D%AC&unitId=148402&tab=curriculum "inflean")]
-3. 메모제이션 원리 이해하기
-   > DP테이블에 저장해 놓는다.
-4. 톱-다운 구현 방식 이해하기
-   > 위에서부터 문제를 파악해 내려오는 방식, 재귀함수 형태로 코드를 구현 단, 탑다운 방식은 재귀 함수의 형태로 구현 되기에 **재귀**의 깊이가 매우 길어질 경우 **런타임 에러**가 발생 할 수 있다. 이럴 경우 **바턴-업으로 구현, 최적화 필수**
+1. DFS를 시작할 노드를 정한 후 사용할 자료구조([인접리스트](https://www.inflearn.com/course/lecture?courseSlug=%EB%91%90%EC%9E%87-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%8C%8C%EC%9D%B4%EC%8D%AC&unitId=148393&tab=curriculum "그래프 inflearn")) 초기화하기
+2. 스택에서 노드를 꺼낸 후 꺼낸 노드를 다시 스택에 사입하기
+3. 스택 자료구조에 값이 없을 때까지 반복하기
+   > 다녀간 노드는 **방문 배열**을 바탕으로 재삽입하지 않는 것이 핵심
+
+- 스택에 노드를 삽입(`push`)할 때 **방문 배열**을 체크, 스택에서 노드를 뺄(`pop`) 때 **탐색 순서에 기록**, 인접 노드를 방문 배열과 **대조**
 
 ---
 
@@ -45,6 +45,10 @@
 
 > ### 🔥KeyWord
 >
-> - 점화식
-> - 톱-다운, 바텀-업
-> - 풀이방식
+> - 스택
+> - 재귀함수
+> - 그래프
+>   - 인접리스트
+> - 방문 배열
+> - 탐색 순서
+> - 대조
