@@ -8,7 +8,7 @@
 - ### 👀특징
   - [재귀 함수](https://www.acmicpc.net/problemset?sort=ac_desc&algo=62 "baekjoon 재귀함수") 로 구현
   - [스택](https://www.acmicpc.net/problemset?sort=ac_desc&algo=71 "baekjoon 스택") 자료구조 이용
-    > FILO(선입선출): 먼저 들어온 DATA 간중에 나간다.
+    > FILO(선입선출): 먼저 들어온 DATA가 나중에 나간다.
   - 스택 오버플로에 유의 해야한다.
 
 ---
