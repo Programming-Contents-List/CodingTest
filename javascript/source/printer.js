@@ -2,19 +2,15 @@ let path = require('path');
 let inputPath = path.join(__dirname, '/dev/stdin'); // __dirname은 현재 스크립트의 디렉토리 절대경로
 let input = require('fs').readFileSync(inputPath).toString().trim().split('\r\n');
 //let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');  //백준 제출
+
 let N = input.shift();
-let arr = [... new Set(input)];
+let arr = input.map(el => el.trim().split(' '));
+console.log(arr);
+let temp = [];
+let idxTmp = [];
 
-//BFAL
-// new Set
-// localCompare
-arr.sort((a, b) => {
-  // return a.length - b.length;
-  if (a.length === b.length) {
-    return a.localeCompare(b);
-  } else {
-    return a.length - b.length;
-  }
-});
-
-arr.forEach(el => console.log(el))
+arr.map((el) => {
+  el.map((el) => {
+    console.log(el);
+  })
+})
