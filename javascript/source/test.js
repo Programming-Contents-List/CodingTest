@@ -1,2 +1,2 @@
-const test = require('./test/destructuringAssignment');
+const test = require('./test/test');
 const boolean = require('./test/boolean');
