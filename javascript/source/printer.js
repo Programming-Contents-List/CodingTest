@@ -12,7 +12,7 @@ console.log(arr);
 let NGE;
 let temp = [];
 let i = 0;
-while (arr.length > 0) {  //arr.length > 0 이렇게 되면 안되는 이유
+while (arr.length > 0) {
   // NGE = arr.pop();  //뒤에서 부터 pop이되는 걸 확인할 수 있음 따라, reverse 해야함
   if (arr[i] < arr[i + 1]) {
     console.log(arr[0]);
