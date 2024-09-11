@@ -12,16 +12,20 @@ console.log(arr);
 let NGE;
 let temp = [];
 let i = 0;
-while (arr.length > 0) {
+while (i < arr.length) {
   // NGE = arr.pop();  //뒤에서 부터 pop이되는 걸 확인할 수 있음 따라, reverse 해야함
-  if (arr[i] < arr[i + 1]) {
-    console.log(arr[0]);
-    NGE = arr[i + 1];
-    temp.push(NGE);
-  } else {
-    temp.push(-1);
+  // let current = arr.shift();  // 첫 번째 값을 꺼내고 배열에서 제거
+  let found = false;
+  for (let j = 0; j < arr.length; j++) {
+    //비교한 값은 다시 비교가 되지 않게 shift가 되면서 사라져야함.
+    if (arr[i] < arr[j]) {
+      NGE = arr[j];
+      temp.push(NGE);
+      found = true;
+      break;
+    }
   }
+  if (!found) temp.push(-1);
   i++;
-  arr.shift();
 }
 console.log(temp);
