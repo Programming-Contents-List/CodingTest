@@ -11,20 +11,17 @@ let arr = input[0].split(' ').map(el => +el);
 // console.log(compare);
 // let NGE;
 let temp = [];
+let stack = [];
 
-while (arr.length > 0) {
-  //검사한 값은 항시 삭제
-  if (arr.length === 1) {
-    temp.push(-1);
-    break;
+for (let i = 0; i < N; i++) {
+  while (stack.length && arr[stack[stack.length - 1]] < arr[i]) {
+    temp[stack.pop()] = arr[i];
   }
-  let current = arr.shift(); //삭제된 현재 값( = NGE)
-
-  if (current < arr[0]) {
-    temp.push(arr[0]);
-    console.log(arr[0]);
-  } else {
-    temp.push(-1);
-  }
+  stack.push(i);
 }
-console.log(temp);
+
+while (stack.length) {
+  temp[stack.pop()] = -1;
+}
+
+console.log(temp.join(' '));
