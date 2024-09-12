@@ -21,7 +21,7 @@ for (let i = 0; i < N; i++) {
   }
   stack.push(i);  //stack에 i가 들어감 이유는 배열의 크기를 맞추기 위해
 }
-
+//결론적으로 index값을 가지고 있는 배열과 값을 가지고 있는 본래의 배열을 가지고 동작한다.
 while (stack.length) {
   temp[stack.pop()] = -1;
 }
