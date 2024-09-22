@@ -1,4 +1,4 @@
-let check = true;
+let check = false;
 if (!check) {
   console.log('false');
   check = true;
