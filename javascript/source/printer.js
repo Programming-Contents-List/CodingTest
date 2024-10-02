@@ -8,17 +8,15 @@ let first = 0;  //current
 let second = 1;  //temp
 let result = 0;
 
-for (let i = 2; i <= N; i++) {
-  result = first + second;
-  first = second;
-  second = result;
-  console.log(`항 ${i}: ${result}`);
-}
-
-//  N이 1일 경우의 피보나치
-if (N === 1) {
+if (N != 1) {
+  for (let i = 2; i <= N; i++) {
+    result = first + second;
+    first = second;
+    second = result;
+  }
+} else {
   result = 1;
-  console.log(`항 1: ${result}`);
+  console.log(result);
 }
 
-console.log(`피보나치 수열의 ${N}번째 항은 ${result}입니다.`);
+console.log(result);
