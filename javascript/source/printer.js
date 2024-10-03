@@ -10,7 +10,7 @@ let result = 0;
 
 if (N === 0) {
   console.log(0);
-} else if (N == 1) {
+} else if (N === 1) {
   console.log(1);
 } else {
   for (let i = 2; i <= N; i++) {
@@ -18,6 +18,7 @@ if (N === 0) {
     first = second;
     second = result;
   }
+  console.log(result);
 }
 
-console.log(result);
+// console.log(result);
