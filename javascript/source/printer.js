@@ -8,15 +8,16 @@ let first = 0;  //current
 let second = 1;  //temp
 let result = 0;
 
-if (N != 1) {
+if (N === 0) {
+  console.log(0);
+} else if (N == 1) {
+  console.log(1);
+} else {
   for (let i = 2; i <= N; i++) {
     result = first + second;
     first = second;
     second = result;
   }
-} else {
-  result = 1;
-  console.log(result);
 }
 
 console.log(result);
