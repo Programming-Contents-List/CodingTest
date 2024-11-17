@@ -3,19 +3,18 @@ function solution(lottos, win_nums) {
   var N = 6;
   var cnt = 0;
   for (let i = 0; i < N; i++) {
-    for (let j = 0; j < N; j++) {
-      if (lottos[i] === j) {
-        cnt++;
-        answer.push(cnt);
-        console.log("ifcnt" + cnt);
-      }
-    }
     if (lottos[i] === win_nums[i]) {
       cnt++;
       answer.push(cnt);
       console.log("cnt" + cnt);
     } else {
-
+      for (let j = 0; j < N; j++) {
+        if (lottos[i] === j) {
+          cnt++;
+          answer.push(cnt);
+          console.log("ifcnt" + cnt);
+        }
+      }
     }
   }
   answer.push(cnt);
