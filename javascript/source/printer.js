@@ -6,43 +6,45 @@ input.shift();
 
 let deck = [];
 for (let el of input) {
+  let [command, value] = el.split(' '); // 명령어와 값을 분리
+  value = Number(value); // 값은 숫자로 변환
   // console.log(el);
-  if (el.includes('push_back')) {
+  if (command === 'push_back') {
     let value = el.split(' ')[1];
     // console.log(value);
     deck.push(value);
-  } else if (el.includes('push_front')) {
+  } else if (command === 'push_front') {
     let value = el.split(' ')[1];
     // console.log(value);
     deck.unshift(value);
-  } else if (el.includes('pop_back')) {
+  } else if (command === 'pop_back') {
     // console.log(value);
     if (deck.length > 0) {
       console.log(deck.pop());
     } else {
       console.log(-1);
     }
-  } else if (el.includes('pop_front')) {
+  } else if (command === 'pop_front') {
     if (deck.length > 0) {
       console.log(deck.shift());
     } else {
       console.log(-1);
     }
-  } else if (el.includes('size')) {
+  } else if (command === 'size') {
     console.log(deck.length);
-  } else if (el.includes('empty')) {
+  } else if (command === 'empty') {
     if (deck.length === 0) {
       console.log(1);
     } else {
       console.log(0);
     }
-  } else if (el.includes('front')) {
+  } else if (command === 'front') {
     if (deck.length > 0) {
       console.log(deck[0]);
     } else {
       console.log(-1);
     }
-  } else if (el.includes('back')) {
+  } else if (command === 'back') {
     if (deck.length > 0) {
       console.log(deck[deck.length - 1]);
     } else {
