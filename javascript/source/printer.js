@@ -1,55 +1,36 @@
 let path = require('path');
-let inputPath = path.join(__dirname, '/dev/stdin.txt'); // __dirname은 현재 스크립트의 디렉토리 절대경로
+let inputPath = path.join(__dirname, '/dev/stdin.txt'); // 로컬 테스트용 경로
+// let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');  // 백준 제출용 경로
 let input = require('fs').readFileSync(inputPath).toString().trim().split('\n');
-//let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');  //백준 제출
-input.shift();
 
-let deck = [];
-for (let el of input) {
-  let [command, value] = el.split(' '); // 명령어와 값을 분리
-  value = Number(value); // 값은 숫자로 변환
-  // console.log(el);
+input.shift(); // 첫 번째 줄 제거
+
+let deck = []; // 덱 배열 초기화
+
+// 함수로 명령어 처리
+function Deck(command, value) {
   if (command === 'push_back') {
-    let value = el.split(' ')[1];
-    // console.log(value);
     deck.push(value);
   } else if (command === 'push_front') {
-    let value = el.split(' ')[1];
-    // console.log(value);
     deck.unshift(value);
   } else if (command === 'pop_back') {
-    // console.log(value);
-    if (deck.length > 0) {
-      console.log(deck.pop());
-    } else {
-      console.log(-1);
-    }
+    console.log(deck.length > 0 ? deck.pop() : -1);
   } else if (command === 'pop_front') {
-    if (deck.length > 0) {
-      console.log(deck.shift());
-    } else {
-      console.log(-1);
-    }
+    console.log(deck.length > 0 ? deck.shift() : -1);
   } else if (command === 'size') {
     console.log(deck.length);
   } else if (command === 'empty') {
-    if (deck.length === 0) {
-      console.log(1);
-    } else {
-      console.log(0);
-    }
+    console.log(deck.length === 0 ? 1 : 0);
   } else if (command === 'front') {
-    if (deck.length > 0) {
-      console.log(deck[0]);
-    } else {
-      console.log(-1);
-    }
+    console.log(deck.length > 0 ? deck[0] : -1);
   } else if (command === 'back') {
-    if (deck.length > 0) {
-      console.log(deck[deck.length - 1]);
-    } else {
-      console.log(-1);
-    }
+    console.log(deck.length > 0 ? deck[deck.length - 1] : -1);
   }
 }
-// console.log(deck);
+
+// 명령어 반복 처리
+for (let el of input) {
+  let [command, value] = el.split(' '); // 명령어와 값을 분리
+  value = Number(value); // 숫자 값 변환 또는 null 처리
+  Deck(command, value); // 명령어 처리 함수 호출
+}
