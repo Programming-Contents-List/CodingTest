@@ -1,3 +1,3 @@
 let array = [10, 20, 30, 13, 25];
-let minValue = Math.min(...array);
-console.log(minValue); // 출력: 30
+let maxValue = Math.max(...array);
+console.log(maxValue); // 출력: 30
