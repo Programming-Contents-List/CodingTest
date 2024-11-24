@@ -7,4 +7,4 @@ for (let i = 0; i < array.length; i++) {
   }
 }
 
-console.log(maxValue); // 출력: 30
+console.log(maxValue);  // 출력: 30
