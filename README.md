@@ -1,7 +1,7 @@
 # CodingTest
 
 ## Rules
-
+- 해당 수업은 한성대학교 x Programmers에서 수업한 내용을 토대로 작성했습니다.
 ### Branch
 
 - main
