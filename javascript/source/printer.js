@@ -6,6 +6,7 @@ let input = require("fs").readFileSync(inputPath).toString().trim().split("");
 let array = "abcdefghijklmnopqrstuvwxyz";
 
 const n = array.length;
+//new 키워드를 생략해도 JavaScript는 Array 생성자를 실행
 const exit = Array(n).fill(0);
 // console.log(input);
 input.forEach((el) => {
