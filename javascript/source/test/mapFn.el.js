@@ -5,8 +5,12 @@ let str = ["h", "e", "l", "l", "o"];
 let upperCaseArray = Array.from(str, (char) => char.toUpperCase());
 console.log(upperCaseArray); // ['H', 'E', 'L', 'L', 'O']
 
-// map을 활용한 방식
+//중복 요소가 있는 배열 변환 : 짝수로만 변환
+let el = [1, 2, 3, 4, 5];
+let evens = Array.from(el, (x) => (x % 2 === 0 ? x : 0));
+console.log(evens); // [0, 2, 0, 4, 0]
 
+// map을 활용한 방식
 let map = new Map([
   ["a", 1],
   ["b", 2],
