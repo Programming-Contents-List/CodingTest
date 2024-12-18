@@ -7,16 +7,9 @@ let input = require("fs")
   .split("\r\n");
 //let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('');  //백준 제출
 
-// console.log(input);
-// let result = [];
-input.map((el) => {
-  let reversed = el.split("").reverse();
-  // console.log(el);
-  let newEl = reversed.join("");
-  // console.log(newEl);
-  if (el === newEl) {
-    console.log("true");
-  } else {
-    console.log("false");
-  }
+input.filter((el) => {
+  if (el === "0") return false; // 0인 경우 제거
+  let newEl = el.split("").reverse().join("");
+  console.log(el === newEl ? "yes" : "no");
+  return true;
 });
