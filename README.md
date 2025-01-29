@@ -1,7 +1,7 @@
 # CodingTest
 
 ## Rules
-
+- 해당 수업은 한성대학교 x Programmers에서 수업한 내용을 토대로 작성했습니다.
 ### Branch
 
 - main
@@ -9,6 +9,10 @@
   - main은 기본 세팅이 되어 있기 때문에 pr이나 외부 push가 이루어져선 안된다.
 - recently
   - 최근 풀어본 문제가 담겨 있는 브렌치다.
+- problem Number(ex. 2557)
+  - 내가 풀고 있는 문제이다. 브렌치는 문제 번호이다.
+- problem Number retry(N)(ex. 2557 retry(N))
+  - 내가 **다시** 풀고 있는 문제이다. 브렌치는 문제 번호와 retry 횟수이다.
 
 ---
 
@@ -71,3 +75,6 @@
   ```
 
   </details>
+
+## Big O fucntion Graph
+![image](https://github.com/user-attachments/assets/42754ed9-4029-49ee-bcea-673aa915efd0)
