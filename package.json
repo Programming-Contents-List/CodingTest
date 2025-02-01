@@ -2,7 +2,7 @@
   "name": "your-project-name",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node javascript/source/printer.js",
+    "dev": "node javascript/source/9095/printer.js",
     "devtest": "node javascript/source/test.js"
   },
   "author": "Your Name",
