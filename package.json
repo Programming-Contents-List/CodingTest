@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "node javascript/source/24480/printer.js",
+    "dev:test": "node javascript/source/24480/indexism/indexism1.js",
     "devtest": "node javascript/source/test.js"
   },
   "author": "Your Name",
