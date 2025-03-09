@@ -16,7 +16,7 @@ input.forEach((line) => {
 for (let i = 1; i <= N; i++) {
   graph[i].sort((a, b) => b - a);
 }
-
+console.log(graph);
 // 방문 배열 & 방문 순서 저장 배열
 let visited = new Array(N + 1).fill(false);
 let order = new Array(N + 1).fill(0);
