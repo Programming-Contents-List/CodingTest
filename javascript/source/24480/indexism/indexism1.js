@@ -28,12 +28,12 @@ let N = Number(input.shift());
 let graph = input[0].split(" ").map(Number);
 console.log(graph);
 
-let result = new Array(N + 1).fill(0);
+let result = new Array(N).fill(0);
 let count = 1;
 
 for (let i = 0; i < graph.length; i++) {
   const visited = graph[i];
-  result[visited] = count++;
+  result[visited - 1] = count++;
 }
 
-console.log(result.slice(1).join(" "));
+console.log(result.join(" "));
