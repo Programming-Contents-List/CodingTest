@@ -16,3 +16,16 @@
  * 출력 예제
  * kcats
  */
+
+let input = `hello`;
+let N = input.length;
+// console.log(N);
+let array = Array.from(input);
+// let visited = Array.from({ length: N }, () => 0);
+let visited = [];
+
+for (let revers = N - 1; revers >= 0; revers--) {
+  visited.push(array[revers]);
+}
+
+console.log(visited.join(""));
