@@ -30,3 +30,22 @@ for (let revers = N - 1; revers >= 0; revers--) {
 }
 
 console.log(visited.join(""));
+
+/**
+const input = `hello`;
+
+let stack = [];
+let reversed = "";
+
+// ✅ 1. 각 문자를 스택에 push
+for (let char of input) {
+  stack.push(char);
+}
+
+// ✅ 2. 스택에서 pop하면서 새로운 문자열을 생성
+while (stack.length > 0) {
+  reversed += stack.pop();
+}
+
+console.log(reversed); // ✅ 뒤집힌 문자열 출력
+ */
