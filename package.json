@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "node javascript/source/9095/printer.js",
-    "devtest": "node javascript/source/test/level1/120830/120830.js"
+    "devtest": "node javascript/source/test/level1/87389/87389.js"
   },
   "author": "Your Name",
   "license": "ISC",
